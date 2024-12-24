@@ -5,7 +5,7 @@ import Router from "next/router";
 import Cookie from "js-cookie";
 import axios from "axios";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://precious-hero-3e40f663a6.strapiapp.com";
 console.log("API_URL:", process.env.NEXT_PUBLIC_API_URL);
 
 
