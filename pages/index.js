@@ -17,7 +17,7 @@ function Home() {
     return (
       <ApolloProvider client={client}>
         <div className="search">
-          <h2>Local Restaurants</h2>
+          <h2>Restaurants Near to You</h2>
           <InputGroup>
             <InputGroupText>Search</InputGroupText>
             <Input
