@@ -56,11 +56,15 @@ function RestaurantList(props) {
       <Col xs="6" sm="4" key={res.documentId}>
         <Card style={{ margin: "0 0.5rem 20px 0.5rem" }}>
           <CardImg
-            top={true}
-            style={{ height: 200 }}
-            src={`https://precious-hero-3e40f663a6.strapiapp.com${res.image?.url || "/placeholder-image.jpg"}`}
+  top={true}
+  style={{ height: 200 }}
+  src={
+    res.image?.url?.startsWith('http')
+      ? res.image.url // URL absoluta, úsala directamente
+      : `https://precious-hero-3e40f663a6.strapiapp.com${res.image?.url || "/placeholder-image.jpg"}` // URL relativa o placeholder
+  }
+/>
 
-          />
           <CardBody>
             <CardText>{res.description}</CardText>
           </CardBody>
