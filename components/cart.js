@@ -18,7 +18,6 @@ function Cart() {
   console.log(`Router Path: ${JSON.stringify(router)}`)
   const renderItems = () => {
     let { items } = cart;
-    console.log(`items: ${JSON.stringify(items)}`);
     if (items && items.length) {
       return items.map((item) => {
         if (item.quantity > 0) {
@@ -26,7 +25,7 @@ function Cart() {
             <div
               className="items-one"
               style={{ marginBottom: 15 }}
-              key={item.id} // Asegura que cada plato tenga un identificador único
+              key={item.documentId} // Usa documentId como clave única
             >
               <div>
                 <span id="item-price">&nbsp; ${item.price}</span>
@@ -41,7 +40,7 @@ function Cart() {
                     marginRight: 5,
                     marginLeft: 10,
                   }}
-                  onClick={() => addItem(item)} // Agregar por ID
+                  onClick={() => addItem(item)}
                   color="link"
                 >
                   +
@@ -53,7 +52,7 @@ function Cart() {
                     width: 15,
                     marginRight: 10,
                   }}
-                  onClick={() => removeItem(item)} // Eliminar por ID
+                  onClick={() => removeItem(item)}
                   color="link"
                 >
                   -
@@ -65,12 +64,13 @@ function Cart() {
             </div>
           );
         }
-        return null; // Asegúrate de no renderizar elementos con cantidad 0
+        return null; // No renderiza elementos con cantidad 0
       });
     } else {
       return <div>No items in your cart.</div>;
     }
   };
+
 
 const checkoutItems = ()=>{
   return (
