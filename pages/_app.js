@@ -34,11 +34,13 @@ function MyApp({ Component, pageProps }) {
 
   // Define la función `addItem`
   const addItem = (item) => {
-    const foundItem = cart.items.find((i) => i.id === item.id);
+    const foundItem = cart.items.find((i) => i.documentId === item.documentId);
     if (foundItem) {
       const updatedCart = {
         items: cart.items.map((i) =>
-          i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+          i.documentId === item.documentId
+            ? { ...i, quantity: i.quantity + 1 }
+            : i
         ),
         total: cart.total + item.price,
       };
@@ -55,18 +57,20 @@ function MyApp({ Component, pageProps }) {
 
   // Define la función `removeItem`
   const removeItem = (item) => {
-    const foundItem = cart.items.find((i) => i.id === item.id);
+    const foundItem = cart.items.find((i) => i.documentId === item.documentId);
     if (foundItem.quantity > 1) {
       const updatedCart = {
         items: cart.items.map((i) =>
-          i.id === item.id ? { ...i, quantity: i.quantity - 1 } : i
+          i.documentId === item.documentId
+            ? { ...i, quantity: i.quantity - 1 }
+            : i
         ),
         total: cart.total - item.price,
       };
       setCart(updatedCart);
     } else {
       const updatedCart = {
-        items: cart.items.filter((i) => i.id !== item.id),
+        items: cart.items.filter((i) => i.documentId !== item.documentId),
         total: cart.total - item.price,
       };
       setCart(updatedCart);
@@ -100,3 +104,4 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+
