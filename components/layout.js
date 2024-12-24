@@ -22,17 +22,24 @@ const Layout = (props) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
-        <Nav className="navbar navbar-dark bg-dark">
+        <Nav
+          className="navbar"
+          style={{ backgroundColor: "#003b73", padding: "10px" }} // Navy Blue
+        >
           <NavItem>
-            <Link href="/" className="navbar-brand">
+            <Link
+              href="/"
+              className="navbar-brand"
+              style={{ color: "#d4f1f4" }} // Baby Blue
+            >
               Home
             </Link>
           </NavItem>
           <NavItem className="ml-auto">
             {user ? (
-              <h5>{user.username}</h5>
+              <h5 style={{ color: "#75e6da" }}>{user.username}</h5> // Blue Green
             ) : (
-              <Link href="/register" className="nav-link">
+              <Link href="/register" className="nav-link" style={{ color: "#bfd7ed" }}> 
                 Sign up
               </Link>
             )}
@@ -45,14 +52,14 @@ const Layout = (props) => {
                 style={{
                   background: "none",
                   border: "none",
-                  color: "white",
+                  color: "#d4f1f4", // Baby Blue
                   cursor: "pointer",
                 }}
               >
                 Logout
               </button>
             ) : (
-              <Link href="/login" className="nav-link">
+              <Link href="/login" className="nav-link" style={{ color: "#bfd7ed" }}>
                 Sign in
               </Link>
             )}
