@@ -1,0 +1,15 @@
+{
+    "name": "backend-app",
+    "scripts": {
+      "postdeploy": "npm install --prefix backend"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      }
+    ]
+  }
+  
