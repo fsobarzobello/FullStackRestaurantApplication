@@ -61,9 +61,16 @@ const GET_RESTAURANT_DISHES = gql`
               <Card style={{ margin: "0 10px" }}>
                 <CardImg
                   top={true}
-                  style={{ height: 150, width:150 }}
-                  src={`https://precious-hero-3e40f663a6.strapiapp.com${dish.image?.url || "/placeholder-image.jpg"}`}
+                  style={{ height: 150, width: 150 }}
+                  src={
+                    dish.image?.url
+                      ? dish.image.url.startsWith('http')
+                        ? dish.image.url // URL absoluta, úsala directamente
+                        : `https://precious-hero-3e40f663a6.strapiapp.com${dish.image.url}` // URL relativa
+                      : "/placeholder-image.jpg" // Imagen por defecto si no hay URL
+                  }
                 />
+
                 <CardBody>
                   <CardTitle>{dish.name}</CardTitle>
                   <CardText>{dish.description}</CardText>
