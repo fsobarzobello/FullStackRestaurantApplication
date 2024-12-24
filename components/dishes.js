@@ -76,13 +76,14 @@ const GET_RESTAURANT_DISHES = gql`
                   <CardText>{dish.description}</CardText>
                 </CardBody>
                 <div className="card-footer">
-                  <Button color="info"
+                  <Button
+                    color="info"
                     outline
-                    //color="primary"
-                    onClick = {()=> addItem(dish)}
+                    onClick={() => addItem(dish)} // Pasa el plato completo, incluyendo documentId
                   >
                     + Add To Cart
                   </Button>
+
                   
                 </div>
               </Card>
