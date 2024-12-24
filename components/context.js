@@ -16,7 +16,7 @@ export const AppProvider = ({ children }) => {
   // Agregar un plato al carrito
   const addItem = (item) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.items.find((i) => i.id === item.id);
+      const existingItem = prevCart.items.find((i) => i.documentId === item.documentId);
       if (existingItem) {
         // Incrementa la cantidad si ya existe
         existingItem.quantity += 1;
