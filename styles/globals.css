@@ -1,12 +1,24 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #d4f1f4; /* Baby Blue */
+  --foreground: #003b73; /* Navy Blue */
+  --nav-bg: #0074b7; /* Royal Blue */
+  --button-primary: #189ab4; /* Blue Grotto */
+  --button-secondary: #75e6da; /* Blue Green */
+  --card-bg: #bfd7ed; /* Baby Blue */
+  --text-dark: #05445e; /* Navy Blue */
+  --text-light: #ffffff; /* White */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a0a0a; /* Dark Background */
+    --foreground: #ededed; /* Light Foreground */
+    --nav-bg: #003b73; /* Navy Blue */
+    --button-primary: #75e6da; /* Blue Green */
+    --button-secondary: #189ab4; /* Blue Grotto */
+    --card-bg: #1a1a1a; /* Darker Background */
+    --text-dark: #ededed; /* Light Text */
+    --text-light: #0a0a0a; /* Dark Text */
   }
 }
 
@@ -17,7 +29,7 @@ body {
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text-dark);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,7 +43,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--text-dark);
   text-decoration: none;
 }
 
@@ -39,4 +51,36 @@ a {
   html {
     color-scheme: dark;
   }
+
+  a {
+    color: var(--text-light);
+  }
+}
+
+button {
+  background-color: var(--button-primary);
+  color: var(--text-light);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-secondary);
+}
+
+.navbar {
+  background-color: var(--nav-bg);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--nav-bg);
+  border-radius: 8px;
+}
+
+.card-title,
+.card-text {
+  color: var(--text-dark);
 }
