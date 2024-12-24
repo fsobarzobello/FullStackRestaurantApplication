@@ -6,7 +6,7 @@ import AppContext from "./context";
 import { logout } from "./auth"; // Asegúrate de que esté bien importado
 
 const Layout = (props) => {
-  const title = "Welcome to Nextjs";
+  const title = "Delivery's";
   const { user, setUser } = useContext(AppContext);
 
   const handleLogout = () => {
@@ -32,7 +32,7 @@ const Layout = (props) => {
               className="navbar-brand"
               style={{ color: "#d4f1f4" }} // Baby Blue
             >
-              Home
+              Delivery's Next Home
             </Link>
           </NavItem>
           <NavItem className="ml-auto">
