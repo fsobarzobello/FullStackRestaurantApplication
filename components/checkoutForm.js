@@ -42,7 +42,7 @@ function CheckoutForm() {
         return;
       }
 
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://precious-hero-3e40f663a6.strapiapp.com";
 
       const response = await fetch(`${API_URL}/api/orders`, {
         method: "POST",
