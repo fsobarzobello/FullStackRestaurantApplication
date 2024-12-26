@@ -35,6 +35,17 @@ const Layout = (props) => {
               Delivery's Next Home
             </Link>
           </NavItem>
+          {user && (
+            <NavItem>
+              <Link
+                href="/orderHistory"
+                className="nav-link"
+                style={{ color: "#bfd7ed", marginLeft: "20px" }} // Baby Blue
+              >
+                Order History
+              </Link>
+            </NavItem>
+          )}
           <NavItem className="ml-auto">
             {user ? (
               <h5 style={{ color: "#75e6da" }}>{user.username}</h5> // Blue Green

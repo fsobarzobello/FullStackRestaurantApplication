@@ -78,9 +78,45 @@ button:hover {
   background-color: var(--card-bg);
   border: 1px solid var(--nav-bg);
   border-radius: 8px;
+  box-shadow: 0 4px 6px var(--card-shadow);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s;
+}
+
+.card:hover {
+  border-color: var(--card-border-hover);
+  box-shadow: 0 8px 12px var(--card-shadow-hover);
+  transform: translateY(-5px); /* Slight elevation */
 }
 
 .card-title,
 .card-text {
   color: var(--text-dark);
+}
+
+.list-group-item {
+  background-color: var(--background);
+  border: 1px solid var(--nav-bg);
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.list-group-item:hover {
+  background-color: var(--button-primary);
+  color: var(--text-light);
+  transform: scale(1.02); /* Slight enlargement on hover */
+}
+
+h2 {
+  color: var(--nav-bg);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.row {
+  justify-content: center;
 }
